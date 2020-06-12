@@ -1,0 +1,122 @@
+There are four main concepts in object-oriented programming. 
+- Encapsulation
+- Abstraction
+- Polymorphism
+- Inheritance
+
+************************************************************************************************************************
+
+Encapsulation
+refers to two concepts
+1. Objects group variables, which hold state, and methods that alter state, in a single unit--the object.
+2. Hiding a class's internal data to prevent the client from directly accessing it. 
+
+In programming, the code outside of a class that uses an object is called "the client"
+
+Private variables and private methods
+- variables and methods that objects can access but clients cannot. 
+* They are useful when you have a method or variable that your class uses internally but you plane to change
+* the implementation of your code later or want to preserve the flexibility to do so.
+
+This ability to hide a class's internal data to prevent the client from directly accessing it is the 
+second concept that Encapsulation refers to.
+
+Python does not have private variables
+
+class PublicPrivateExample:
+    def __init__(self):
+        self.public = "safe"
+        self._unsafe = "unsafe"
+    
+    def public_method(self):
+        # clients can use this 
+        pass
+    
+    def _unsafe_method(self):
+        # clients shouldn't use this
+        pass 
+
+A public variable is a variable a client can access. 
+Python addresses the problem, private variables solve by using naming conventions. 
+
+If you have a variable or method the caller should not access, you proceed its name with an underscore "_"
+exampel: "_unsafe", "_unsafe_method"
+Python programmers know if the name of a method or variable starts with an underscore, they shouldn't use it. 
+
+************************************************************************************************************************
+
+Abstraction
+- Process of "taking away or removing characteristics from something to reduce it 
+    to a set of essential characteristics."
+
+For example, if you were to model a person class. You might include characteristics like height and weight.
+But omit other details like hair and eye color.
+
+class Person:
+    def __init__(self, height, weight):
+        self.height = height
+        self.weight = weight
+
+************************************************************************************************************************
+
+Polymorphism
+- The ability in programming to present the same interface for different data types.
+- You can think of an interface as a function or method
+
+For example, in this program, you presented the same interface.
+
+print("Hello, Worlds!")
+print(200)
+print(200.1)
+
+The "print" function for three different data types a string, an integer, and a floating point number. 
+You didn't have to call and define three separate functions, such as 
+    - print_str()
+    - print_int()
+    - print_float()
+
+************************************************************************************************************************
+
+Inheritance
+- In programming, is similar to genetic inheritance. 
+- In genetic inheritance, you inherit attributes like eye color from your parents. 
+- Similarly, classes can inherit methods and variables fro manother class. 
+- The class that gets inherited from is called the parent class.
+- The class that inherits is called the child class. 
+
+Example:
+class Shape():
+    def __init__(self, w, l):
+        self.width = w 
+        self.len = l
+    def print_size(self):
+        print(""" {} by {} """.format(self.width,self.len))
+
+class Square(Shape):
+    pass 
+    # keyword "pass" just tells Python not to do anything. 
+
+a_square = Square(20, 20)
+a_square.print_size()
+
+You can create a child class that inherits from a parent class by passing 
+the name of the parent as a parameter to the child when you create it.  
+Because of inheritance, you can create a square object. Pass it a width and length and
+    call the method print_size on it without writing any code. Aside from pass. 
+    All that code comes from the parent class. 
+
+class Shape():
+    def __init__(self, w, l):
+        self.width = w
+        self.len = l 
+    def print_size(self):
+        print(""" {} by {} """.format(self.width,self.len))
+
+class Square(Shape):
+    def print_size(self): # Method Overwriting
+        print("override") 
+
+a_square = Square(20, 20)
+
+When a child inherits a method from a parent class, you can overwrite it by defninig a new method 
+    with the same name. This process is called Method overwriting

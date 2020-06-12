@@ -1,0 +1,84 @@
+Programming Paradigm
+- Functional
+- Object-Oriented
+- Procedural
+
+Object-Oriented Programming
+Like the funcitonal programming paradigmm, object-oriented paradigm also eliminates global state. 
+But instead of storing state in functions, you store it in objects. example: "String" 1 2 3
+***********Learned earlier everything in python from strings to integers are obejcts. ************
+
+class
+- you create an object using something called a class. 
+- A class is like a blueprint for creating objects.
+- In Python, every object is an instance of a class which means the Object data type is the class that created it. 
+
+Example:
+str()
+- A string in Python has the data type string because behind the scenes Python creates it with the string class.
+
+You can use a class to create instances of your own objects. 
+
+# For example, if you want to mode oranges in Python you can use a class to create a blueprint of an
+# orange and then use that blueprint to create different instances of orange objects. 
+
+class Orange:
+    # This piece of code is an example of defining a method. 
+    # You define a method inside of a class. 
+    # Then when you use a class to create an object, you can call the method you defined on it. 
+    def __init__(self):
+        print("Created!")
+
+# Creating a new object is call instantiating a class. 
+orange = Orange()
+
+# This a class called Orange. Class names should always start with an uppercase letter and you should
+# always name classes using camel case which means if a class name has more than one word, you should always
+# capitlize the first letter of every word. 
+
+In Python when you name a method "init" preceded and followed by two underscores "__init__" you are defining
+a special method Python call every time you creat a new object using that class. Any method surrounded by double 
+underscores, is called a Magic Method. Python uses for special purposes like creating an object. 
+When you define a method, it must always accept at least one parameter, except for special cases. 
+The convention in Python is always to name this parameter "self". 
+The reason methods have to accept at least one parameter is because when you call a method, Python passes the object
+the method was called on back to it, as a parameter. 
+
+Example:
+
+class Orange:
+    def __init__(self):
+        print(self)
+
+orange = Orange() # <__main__.Orange object at 0x1056640b8>
+print(orange) # <__main__.Orange object at 0x1056640b8>
+
+Practiced oop in orange.py *******
+
+Object-oriented Programming
+- Allows you to model a "has a" relationship by storing an object as a variable in another obecjt. 
+- The formal name for this is "Composition" 
+
+class Dog():
+    def __init__(self, name, breed, owner):
+        self.name = name
+        self.breed = breed 
+        self.owner = owner 
+
+class Person():
+    def __init__(self, name):
+        self.name = name
+
+mick = Person("Mick Jagger")
+stan = Dog("Stanely", "Bulldog", mick)
+print(stan.owner.name)
+
+Object-oriented programming has several advantages
+- Encourage code reuse.
+- Decreases the amount of time.
+- Encourages breaking problems up.
+- Code that is easy to maintain.
+
+Disadvantages
+- Takes extra effort.
+- Great deal of planning. 

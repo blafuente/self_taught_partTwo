@@ -1,0 +1,44 @@
+Programming Paradigm
+- a style of Programming
+- There are several types of paradigms, the three most popular are:
+    - Procedural
+    - Object-Oriented
+    - Functional
+
+Procedural Programming
+- programming style
+- where you write a sequence of steps moving towards a solution with each step, changing the program state
+- in Procedural, you write code to:
+        do("this")
+    then:
+        do("that")
+
+Example of Procedural programming
+x = 2 # define x
+y = 4 # define y
+z = 8 # define z
+xyz = x + y + z # define the value of xyz
+print(xyz) # results in 14
+
+When you prgram procedurally, you store data in global variables
+
+authors = []    # global variables
+
+# manipulate with functions
+def collect_authors():
+    answer = None
+    while answer != "q":
+        answer = input("Who is your favorite author? ")
+        authors.append(answer)
+
+print(authors)
+
+Procedural programming is fine when building small programs. Once programs become larger, issues will arise. 
+For example, when you program becomes larger, it needs to keep track of more data. Which means you need to make 
+more global variables. At a certain point, it makes it hard to keep track of all the global variables. 
+It will lead to unexpected errors. 
+
+Side Effects 
+- When you change the state of a global variable. 
+
+The issues with procedural programming lead to the discovery of Object-Oriented Programming and Functional Programming.

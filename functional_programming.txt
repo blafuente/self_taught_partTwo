@@ -1,0 +1,47 @@
+Programming Paradigm
+- Functional
+- Object-Oriented
+- Procedural
+
+The main difference between the programming paradigms are handling of state. 
+
+State:
+- value of a program's variables.
+
+Global State:
+- value of a program's global variables. 
+
+Functional Programming
+- Addresses the problems that arise in procedural programming by eliminating global state. 
+- Functional programmers do not use global variables. 
+- Instead they keep of data by passing it as a parameter to one function to another. 
+
+Key Concept:
+- In functional programming, you write programs that do not rely on or change any global state. 
+
+example:
+
+# functional programmer would not like this code
+
+a = 0
+
+def increment():
+    global a 
+    a += 1
+
+# functional programmer would prefer this:
+
+def increment(a):
+    return a + 1
+
+# does not have to deal with global variables and data outside of itsself 
+
+Functional Programming
+Advantage 
+- Eliminates an entire category of errors caused by global state.
+
+Disadvantage
+- Certain problems are easier to conceptualize with state. 
+
+
+
