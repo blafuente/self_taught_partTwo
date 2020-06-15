@@ -1,0 +1,91 @@
+Object-Oriented Programming
+
+- class variables
+- instance variables
+- magic methods
+- the keyword "is" 
+
+***************************************************************************************************************
+
+Class variables vs Instance variables
+In Python, everything is an object, even classes. 
+
+class Square:
+    pass
+
+print(Square)
+
+A class Square is an object that you can print. 
+
+Classes have two types of variables.
+- Class Variables
+    - Belong to the object and the object's class. 
+    * Class variables are useful because you can use them to share data between all of the instances of class
+      without relying on global variables. 
+
+- Instance Variables
+    - Belong to objects.
+    * The variables you've used up to so far have been instance variables. 
+
+class Rectangle():
+    def __init__(self, w, l):
+        self.width = w 
+        self.len = l 
+
+In this example, width and len are instance variables.
+You can define a class variable by creating a variable inside of a class without using self like this.
+class Rectangle():
+    recs = []    # Class Variable 
+    def __init__(self, w, l):
+        self.width = w 
+        self.len = l 
+        self.recs.append((self.width, self.len))    # appends a tuple to recs 
+
+recs = [] is a Class Variable. You defined it outside of the init method because "init" only gets called
+when you create an object. 
+
+***************************************************************************************************************
+
+Magic Methods 
+
+class Lion:
+    def __init__(self, name):
+        self.name = name
+
+lion = Lion("Dilbert")
+print(lion)
+results >>> <__main__.Lion object at 0x104e64128>
+
+Every class inherits from a parent class called object. Python uses methods it inherits from Object in different
+situations like when you print an object. 
+When you print an object, Python calls a magic method called "repr" inherited from object and prints whatever 
+the method returns. By default, it prints information about the object like its type and location in memory. 
+you can override this method to change what prints. 
+
+    def __rerp__(self):
+        return self.name
+
+Now it will print the lion's name. The repr method was changed to return the lion's name. 
+
+***************************************************************************************************************
+
+The keyword "is"
+
+class Person();
+    def __init__(self):
+        self.name = "Bob"
+
+bob = Person()
+same_bob = bob
+print(bob is same_bob)
+# The keyword is returns True if the operands on either side of it are the same object.
+
+another_bob = Person()
+print(bob is another_bob)
+# and False if not
+
+When you use the keyword "is" in an expression with the objects bob and same_bob as operators
+the expression evaluates to True because both variables point to the same object****  
+When you create a new person object and compare it to the original bob, the expression evaluates to 
+False because the variables point to different person objects.  
+
